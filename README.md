@@ -6,6 +6,8 @@ simply run:
 
 or use ***-d*** flag to run in background
 
+it should run on http://localhost:4203/
+
 
 
 ## To run separately:
