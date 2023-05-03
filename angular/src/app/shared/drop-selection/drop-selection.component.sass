@@ -1,0 +1,39 @@
+:host
+    display: flex
+    justify-content: center
+
+.file-hover
+    background-color: #f00
+
+.ngx-file-drop__drop-zone
+    border: none
+.ngx-file-drop__drop-zone--over
+    & .default-button
+        background-color: #fdf
+        transform: scale(1.05)
+
+.upload-button-text
+    position: relative
+    .button-small-font
+        letter-spacing: 2px
+        font-size: .3rem
+        right: 0
+        position: absolute
+
+.file-drop-small
+    width: 60%
+    .button-small-font
+        font-size: .2rem
+
+@media screen and (max-width: 1000px)
+    .upload-button-text .button-small-font
+        letter-spacing: 1px
+        font-size: .5rem
+        right: 0
+        position: absolute
+
+@media screen and (max-width: 800px)
+    .upload-button-text .button-small-font
+        letter-spacing: 1px
+        font-size: .4rem
+        position: absolute

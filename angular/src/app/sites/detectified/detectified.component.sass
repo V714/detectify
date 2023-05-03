@@ -1,0 +1,93 @@
+.detectified-container
+    height: -webkit-fill-available
+    backdrop-filter: blur(30px)
+    width: 100vw
+    background-color: #222
+
+    .detectified-img-container
+        width: 70vw
+        display: flex
+        align-items: center
+        justify-content: center
+        .on-hover-content
+            position: absolute
+            color: white
+            opacity: 0
+            pointer-events: none
+            transform: translateY(10vh)
+            transition: .2s all ease-in-out
+            .on-hover-content-small
+                font-size: .5rem
+                text-align: right
+        #detectified-image
+            padding: auto
+            max-width: 100%
+            max-height: 100%
+            transition: .2s all ease-in-out
+            &:hover
+                transition: .1s all ease-in-out
+                filter: blur(5px)
+                opacity: .5
+                &+.on-hover-content
+                    transform: none
+                    opacity: 1
+    .detectified-table
+        height: 100%
+        width: 30vw
+        background: linear-gradient(161.99deg, #6BB2E1 23.73%, #F5486E 98.09%)
+        color: #fff
+        padding: 10% 0 10% 0
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+
+        table
+            width: 100%
+            background-color: transparent
+            th
+                font-weight: 800
+                font-size: .45rem
+            td
+                font-weight: 700
+                border: 0px
+            th, td
+                width: 40%
+                text-align: left
+                color: #fff !important
+            tbody
+                cursor: pointer
+
+            .table-row:hover
+                background-color: #ffffff20
+                th, td
+                    background-color: transparent
+
+.mat-tooltip-row-class
+    white-space: pre-line
+
+.mat-mdc-slide-toggle .mdc-form-field>label
+    color: #fff !important
+    font-weight: 700
+    font-size: .5rem
+
+.table-blurred
+    filter: blur(3px)
+
+.detectified-table-no-data
+    text-align: center
+
+@media screen and (max-width: 1000px)
+    .detectified-container
+        flex-direction: column
+        height: -webkit-fill-available
+        .detectified-img-container
+            width: 100vw
+        .detectified-table
+            min-height: 30vh
+            width: 100vw
+            padding: 0
+            justify-content: flex-start
+            gap: 35px
+            padding-bottom: 20px
+        .detectified-table mat-row, mat-footer-row
+            min-height: 15px

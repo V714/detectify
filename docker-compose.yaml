@@ -1,0 +1,54 @@
+version: "3"
+services:
+  angular:
+    build: ./angular
+    ports:
+      - "4203:80"
+    volumes:
+      - data:/app/angular
+    networks:
+      - network
+  spring:
+    build: ./spring
+    ports:
+      - "8080:8080"
+    volumes:
+      - data:/app/spring
+      - type: bind
+        source: ./imgs
+        target: /app/imgs
+        bind:
+          propagation: rshared
+    networks:
+      - network
+    depends_on:
+      - pytorch
+  pytorch:
+    build: ./pytorch
+    ports:
+      - "5000:5000"
+    volumes:
+      - data:/app/pytorch
+      - type: bind
+        source: ./imgs
+        target: /app/imgs
+        bind:
+          propagation: rshared
+    networks:
+      - network
+  postgres:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=sect3rP@ss
+    volumes:
+      - data:/var/lib/postgresql/data
+    networks:
+      - network
+
+volumes:
+  data:
+networks:
+  network:

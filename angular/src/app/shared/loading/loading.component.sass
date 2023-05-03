@@ -1,0 +1,136 @@
+:host
+    position: absolute
+    height: -webkit-fill-available
+    width: 100%
+    display: flex
+    align-items: center
+    background-color: #0002
+    backdrop-filter: blur(5px)
+    z-index: 999
+
+.loader-container
+    height: 120px
+    width: 100%
+    text-align: center
+    background-color: #0004
+    padding: 25px
+    color: #fff
+    position: relative
+    display: flex
+    justify-content: center
+    gap: 100px
+
+.ring-container
+    display: flex
+    align-items: center
+    justify-content: center
+
+.ring
+    width: 100px
+    height: 100px
+    border: 0px solid #000
+    border-radius: 50%
+    position: absolute
+
+    &:nth-child(1)
+        border-bottom-width: 9px
+        border-color: #F5486E
+        animation: ring-rotate1 1s linear infinite
+
+    &:nth-child(2)
+        border-right-width: 8px
+        border-color: #6BB2E1
+        animation: ring-rotate2 1s linear infinite
+
+    &:nth-child(3)
+        border-left-width: 6px
+        border-color: #ffcc00
+        animation: ring-rotate3 1s linear infinite
+
+    &:nth-child(4)
+        border-top-width: 3px
+        border-color: #fff
+        animation: ring-rotate4 1s linear infinite
+
+@keyframes ring-rotate1
+    0%
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(0deg)
+    100%
+        transform: rotateX(35deg) rotateY(-45deg) rotateZ(360deg)
+
+@keyframes ring-rotate2
+    0%
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(0deg)
+    100%
+        transform: rotateX(50deg) rotateY(10deg) rotateZ(360deg)
+
+@keyframes ring-rotate3
+    0%
+        transform: rotateX(35deg) rotateY(50deg) rotateZ(0deg)
+    100%
+        transform: rotateX(35deg) rotateY(50deg) rotateZ(360deg)
+
+@keyframes ring-rotate4
+    0%
+        transform: rotateX(0deg) rotateY(-0deg) rotateZ(0deg)
+    100%
+        transform: rotateX(-0deg) rotateY(-0deg) rotateZ(360deg)
+
+.loader-labels
+    overflow: hidden
+    span
+        display: block
+        animation: spin-words 7s infinite 1s
+
+@keyframes spin-words
+    0%
+        transform: translateY(0%)
+    10%
+        transform: translateY(-100%)
+    25%
+        transform: translateY(-100%)
+    35%
+        transform: translateY(-200%)
+    50%
+        transform: translateY(-200%)
+    60%
+        transform: translateY(-300%)
+    75%
+        transform: translateY(-300%)
+    85%
+        transform: translateY(-400%)
+    100%
+        transform: translateY(-400%)
+
+@media screen and (max-width: 1250px)
+    .ring
+        width: 65px
+        height: 65px
+    .loader-container
+        font-size: .9rem
+
+@media screen and (max-width: 1000px)
+    .ring
+        width: 50px
+        height: 50px
+        &:nth-child(1)
+            border-bottom-width: 4px
+
+        &:nth-child(2)
+            border-right-width: 4px
+
+        &:nth-child(3)
+            border-left-width: 3px
+
+        &:nth-child(4)
+            border-top-width: 1px
+    .loader-container
+        height: 100px
+@media screen and (max-width: 800px)
+    .ring
+        width: 30px
+        height: 30px
+    .loader-container
+        font-size: .4rem
+        height: 50px
+        padding: 18px

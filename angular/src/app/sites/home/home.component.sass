@@ -1,0 +1,30 @@
+.home-body
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    height: -webkit-fill-available
+    color: #fff
+.letter-spacing
+    margin-top: 6rem
+    font-weight: 600
+    letter-spacing: 15px
+    padding: 1rem
+    border-radius: 10px
+
+@media screen and (max-width: 1000px)
+    .letter-spacing
+        letter-spacing: 8px
+        margin-top: unset
+    .home-body
+        height: 80vh
+
+@media screen and (max-width: 800px)
+    .letter-spacing
+        letter-spacing: 5px
+        margin-top: unset
+
+@media screen and (max-width: 500px)
+    .letter-spacing
+        letter-spacing: 3px
+        margin-top: unset

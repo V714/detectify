@@ -1,0 +1,21 @@
+<div
+  class="file-drop d-flex justify-content-center"
+  [class.file-drop-small]="small"
+>
+  <ngx-file-drop
+    #fileDrop
+    (onFileDrop)="onFileDropped($event)"
+    (onFileEnter)="onFileEnter()"
+    (onFileLeave)="onFileLeave()"
+    [contentClassName]="small ? 'small-button' : 'default-button'"
+    (click)="fileInput.click()"
+  >
+    <ng-template ngx-file-drop-content-tmp>
+      <div class="upload-button-text">
+        {{ dropZoneLabel }}
+        <p class="button-small-font">(max 5MB)</p>
+      </div>
+    </ng-template>
+    <input #fileInput type="file" hidden (change)="onFileSelected($event)" />
+  </ngx-file-drop>
+</div>
